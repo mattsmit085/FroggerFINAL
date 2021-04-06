@@ -199,7 +199,7 @@ namespace FroggerFINAL
                 scene = "end";
                 titleText.Text = "";
                 scoreCounterLabel.Text = "";
-                subtitleText.Text = $"SCORE:{score}\nSpace - Restart || Esc - Menu";
+                subtitleText.Text = $"SCORE:{score}\nSpace - Restart || Esc - Quit";
                 gameOver.Visible = true;
                 deathCount = 0;
                 obst3Y = -50;
@@ -208,6 +208,7 @@ namespace FroggerFINAL
                 obst4Y = -50;
                 countermax = 50;
                 countermin = 1;
+                froggerTimer.Enabled = false;
 
                 if (score >= Convert.ToInt32(highscore.Last()))
                 {
@@ -438,7 +439,7 @@ namespace FroggerFINAL
             }
             for (int i = 0; i < car2XRList.Count(); i++)
             {
-                obst4Rec = new Rectangle(car2XRList[i], obst4Y, heroWidth * 2, heroHeight);
+                obst4Rec = new Rectangle(car2XRList[i], obst4Y, heroWidth * 4 , heroHeight);
                 if (heroRec.IntersectsWith(obst4Rec))
                 {
                     frog1 = Properties.Resources.FrogDEAD;
@@ -626,7 +627,11 @@ namespace FroggerFINAL
                     break;
                 case Keys.Escape:
                     if (scene == "title") { Application.Exit(); }
-                   else if (scene == "end") { gameTitle(); }
+                   if (scene == "end") {
+                       // gameTitle(); 
+                       // scene = "title";
+                        this.BringToFront();
+                    }
                     escDown = true;
                     break;
                 case Keys.Up:
