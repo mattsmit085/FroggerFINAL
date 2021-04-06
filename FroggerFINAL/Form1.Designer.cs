@@ -102,9 +102,9 @@ namespace FroggerFINAL
             // arroLabel
             // 
             this.arroLabel.BackColor = System.Drawing.Color.Transparent;
-            this.arroLabel.Location = new System.Drawing.Point(-2, -23);
+            this.arroLabel.Location = new System.Drawing.Point(-2, -17);
             this.arroLabel.Name = "arroLabel";
-            this.arroLabel.Size = new System.Drawing.Size(388, 575);
+            this.arroLabel.Size = new System.Drawing.Size(388, 569);
             this.arroLabel.TabIndex = 5;
             this.arroLabel.Text = "label1";
             // 
@@ -120,9 +120,10 @@ namespace FroggerFINAL
             this.Controls.Add(this.titleText);
             this.Controls.Add(this.scoreCounterLabel);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FROGGER 2";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

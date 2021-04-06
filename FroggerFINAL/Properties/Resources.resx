@@ -145,6 +145,9 @@
   <data name="Car3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Car3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\495541__matrixxx__retro-death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="frogBjump" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frogBjump.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,11 +184,20 @@
   <data name="GameInit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GameInit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\76376__deleted-user-877451__game-over.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="GAME_OVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GAME-OVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jump" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\350905__cabled-mess__jump-c-05.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="LOG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nextlevel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\518307__mrthenoronha__death-song-8-bit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

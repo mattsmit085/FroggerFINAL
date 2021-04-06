@@ -155,8 +155,20 @@ namespace FroggerFINAL
 
         }
 
+        //SOUNDS
+        SoundPlayer JumpSound = new SoundPlayer(Properties.Resources.jump);
+        SoundPlayer NextLevelSound = new SoundPlayer(Properties.Resources.nextlevel);
+        SoundPlayer DeathSound = new SoundPlayer(Properties.Resources.death);
+        SoundPlayer EndSound = new SoundPlayer(Properties.Resources.GameOver);
+
+
+        //FILES
+       // string filePath = @"C:\FroggerTemp\highscores.txt";
         public void gameTitle()
         {
+            Cursor.Hide();
+            Form2 F2 = new Form2();
+            F2.Show();
             arroLabel.Visible = false;
             titleText.Text = "FROGGER 2:\nElectric Boogaloo";
             subtitleText.Text = $"\n Space - Play || Esc - Quit\n HIGH SCORE: {highscore.Last()}";
@@ -183,10 +195,11 @@ namespace FroggerFINAL
         {
             if (deathCount == 4)
             {
+                EndSound.Play();
                 scene = "end";
                 titleText.Text = "";
                 scoreCounterLabel.Text = "";
-                subtitleText.Text = $"SCORE:{score}\nSpace - Restart || Esc - Quit";
+                subtitleText.Text = $"SCORE:{score}\nSpace - Restart || Esc - Menu";
                 gameOver.Visible = true;
                 deathCount = 0;
                 obst3Y = -50;
@@ -205,6 +218,7 @@ namespace FroggerFINAL
         }
         public void heroDead()
         {
+            DeathSound.Play();
             frog1 = Properties.Resources.FrogIDLE;
             heroX = 157;
             heroY = 510;
@@ -270,6 +284,7 @@ namespace FroggerFINAL
             // MOVEMENT
             if (upDown == true && counter >= 3 && moveOk == true)
             {
+                JumpSound.Play();
                 heroY -= 56;
                 counter = 0;
                 moveOk = false;
@@ -277,6 +292,7 @@ namespace FroggerFINAL
             }
             if (downDown == true && counter >= 3 && moveOk == true)
             {
+                JumpSound.Play();
                 heroY += 56;
                 counter = 0;
                 moveOk = false;
@@ -284,6 +300,7 @@ namespace FroggerFINAL
             }
             if (rightDown == true && counter >= 3 && moveOk == true)
             {
+                JumpSound.Play();
                 heroX += 38;
                 counter = 0;
                 moveOk = false;
@@ -291,6 +308,7 @@ namespace FroggerFINAL
             }
             if (leftDown == true && counter >= 3 && moveOk == true)
             {
+                JumpSound.Play();
                 heroX -= 38;
                 counter = 0;
                 moveOk = false;
@@ -313,6 +331,8 @@ namespace FroggerFINAL
                 countermax += 20;
                 countermin += 20;
                 arroLabel.Visible = true;
+
+                NextLevelSound.Play();
 
                 arroLabel.Image = Properties.Resources.arro1;
                 Thread.Sleep(25);
@@ -521,7 +541,7 @@ namespace FroggerFINAL
 
                 for (int i = 0; i < log1XList.Count(); i++)
                 {
-                    //  e.Graphics.FillRectangle(redBrush, log1XList[i], log1Y, heroWidth * 2, heroHeight);
+                    // e.Graphics.FillRectangle(redBrush, log1XList[i], log1Y, heroWidth * 2, heroHeight);
                     e.Graphics.DrawImage(LOG, log1XList[i], log1Y, heroWidth * 2, heroHeight);
                 }
 
@@ -605,7 +625,8 @@ namespace FroggerFINAL
                     if (scene == "title" || scene == "end") { gameInitialize(); }
                     break;
                 case Keys.Escape:
-                    if (scene == "title" || scene == "end") { Application.Exit(); }
+                    if (scene == "title") { Application.Exit(); }
+                   else if (scene == "end") { gameTitle(); }
                     escDown = true;
                     break;
                 case Keys.Up:
@@ -620,6 +641,7 @@ namespace FroggerFINAL
                 case Keys.Left:
                     leftDown = true;
                     break;
+
             }
         }
 
