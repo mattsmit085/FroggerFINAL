@@ -13,6 +13,8 @@ using System.IO;
 
 namespace FroggerFINAL
 {
+    //MATT SMITH
+    //APRIL 7, 2021
     public partial class Form1 : Form
     {
         // VARIABLES
